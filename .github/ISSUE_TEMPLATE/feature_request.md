@@ -1,4 +1,11 @@
-ISSUE STANDARD EX:
+---
+name: Feature request
+about: Suggest an idea for this project
+title: ''
+labels: ''
+assignees: ''
+
+---
 
 # [Short descriptive title]
 
