@@ -34,9 +34,8 @@ Describe what should be implemented, changed, or fixed in the frontend and why.
 
 ## Acceptance criteria
 - [ ] UI matches Figma design
-- [ ] Feature works in all supported browsers
+- [ ] Feature looks good in chrome browser with 1440x900 x1
 - [ ] No console errors or warnings
-- [ ] Code is reviewed and approved
 
 
 ## Design / References

@@ -32,15 +32,17 @@ After:
 4. Navigate to the relevant page / feature
 5. Test edge cases (empty state, error state, loading)
 
+
 ## Checklist before submitting PR
 Check each box by adding an `x` → `[x]`
 
-- [ ] I have tested the feature locally
+- [ ] I have tested the feature locally in chrome with 1440x900 x1
 - [ ] No console errors or warnings
 - [ ] Code follows project coding standards
 - [ ] Components are reusable where appropriate
 - [ ] Accessibility has been considered
 - [ ] Responsive behavior has been considered/tested
+- [ ] I have followed the Figma design to the best of my abilities
 
 
 # For the reviewer:
@@ -50,6 +52,7 @@ Check each box by adding an `x` → `[x]`
 
 - [ ] UI matches Figma design
 - [ ] Code is readable and maintainable
-- [ ] No unnecessary complexity
 - [ ] Edge cases are handled
 - [ ] Naming and structure make sense
+- [ ] Everything works as described in PR/issue
+- [ ] I have tested using chrome 1440x900 x1
