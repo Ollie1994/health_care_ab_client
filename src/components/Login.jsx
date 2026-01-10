@@ -99,10 +99,10 @@ function Login() {
       });
 
       // Redirect based on user role
-      if (roles.includes("ADMIN")) {
-        navigate("/admin/dashboard", { replace: true });
+      if (roles.includes("CAREGIVER")) {
+        navigate("/caregiver/dashboard", { replace: true });
       } else {
-        navigate("/user/dashboard", { replace: true });
+        navigate("/patient/dashboard", { replace: true });
       }
     } catch (error) {
       console.error("Login failed:", error.response || error);
