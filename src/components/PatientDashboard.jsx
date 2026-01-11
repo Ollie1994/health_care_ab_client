@@ -4,7 +4,7 @@ import styled from "styled-components";
 import Logout from "./Logout";
 
 // Styled components for user dashboard layout
-const UserContainer = styled.div`
+const PatientContainer = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
@@ -24,19 +24,19 @@ const Text = styled.p`
 `;
 
 // Only accessible to users with the "User" role
-function UserDashboard() {
+function PatientDashboard() {
   const {
     authState: { user },
   } = useAuth();
 
   return (
-    <UserContainer>
+    <PatientContainer>
       <LogoContainer src={Logo} alt="Health Care Logo" />
-      <Title>User Dashboard</Title>
+      <Title>Patient Dashboard</Title>
       <Text>Welcome, {user}!</Text>
       <Logout />
-    </UserContainer>
+    </PatientContainer>
   );
 }
 
-export default UserDashboard;
+export default PatientDashboard;

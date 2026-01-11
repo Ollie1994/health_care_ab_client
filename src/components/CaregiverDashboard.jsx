@@ -3,8 +3,8 @@ import Logo from "../assets/health_care_logo.svg";
 import styled from "styled-components";
 import Logout from "./Logout";
 
-// Styled components for admin dashboard layout
-const AdminContainer = styled.div`
+// Styled components for caregiver dashboard layout
+const CaregiverContainer = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
@@ -23,20 +23,20 @@ const Text = styled.p`
   font-size: 18px;
 `;
 
-// Only accessible to users with the "Admin" role
-function AdminDashboard() {
+// Only accessible to users with the "Caregiver" role
+function CaregiverDashboard() {
   const {
     authState: { user },
   } = useAuth();
 
   return (
-    <AdminContainer>
+    <CaregiverContainer>
       <LogoContainer src={Logo} alt="Health Care Logo" />
-      <Title>Admin Dashboard</Title>
+      <Title>Caregiver Dashboard</Title>
       <Text>Welcome, {user}!</Text>
       <Logout />
-    </AdminContainer>
+    </CaregiverContainer>
   );
 }
 
-export default AdminDashboard;
+export default CaregiverDashboard;

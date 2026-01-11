@@ -6,8 +6,8 @@ import {
 } from "react-router-dom";
 import { AuthProvider } from "./context/AuthContext";
 import Login from "./components/Login";
-import UserDashboard from "./components/UserDashboard";
-import AdminDashboard from "./components/AdminDashboard";
+import PatientDashboard from "./components/PatientDashboard";
+import CaregiverDashboard from "./components/CaregiverDashboard";
 import Unauthorized from "./components/Unauthorized";
 import Home from "./components/Home";
 import RequireAuth from "./components/RequireAuth";
@@ -28,18 +28,18 @@ function App() {
 
             {/* Protected routes - require authentication and specific roles */}
             <Route
-              path="/user/dashboard"
+              path="/patient/dashboard"
               element={
-                <RequireAuth allowedRoles={["USER"]}>
-                  <UserDashboard />
+                <RequireAuth allowedRoles={["PATIENT"]}>
+                  <PatientDashboard />
                 </RequireAuth>
               }
             />
             <Route
-              path="/admin/dashboard"
+              path="/caregiver/dashboard"
               element={
-                <RequireAuth allowedRoles={["ADMIN"]}>
-                  <AdminDashboard />
+                <RequireAuth allowedRoles={["CAREGIVER"]}>
+                  <CaregiverDashboard />
                 </RequireAuth>
               }
             />
