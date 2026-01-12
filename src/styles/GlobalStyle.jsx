@@ -12,10 +12,6 @@ const GlobalStyle = createGlobalStyle`
     height: 100vh;
   }
 
-  .content {
-  margin: 1rem;
-  }
-
   .link {
    text-decoration: none;
     color: inherit;

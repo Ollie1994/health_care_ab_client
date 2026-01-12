@@ -40,11 +40,34 @@ const LogoContainer = styled.img`
   height: 20rem;
 `;
 
+const SignupText = styled.p`
+  margin-top: 16px;
+  font-size: 14px;
+  color: #4d4c4c;
+  text-align: center;
+`;
+
+const SignupLink = styled(Link)`
+  margin-left: 4px;
+  color: #0073E6;
+  font-weight: 500;
+  cursor: pointer;
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
+`;
+
 const Home = () => (
   <HomeContainer>
     <LogoContainer src={Logo} alt="Health Care Logo" />
     <Title>Health Care Appointment App</Title>
     <LoginButton to="/login">Login</LoginButton>
+    <SignupText>
+      New to Health Care AB?
+      <SignupLink to="/register">Sign up</SignupLink>
+    </SignupText>
   </HomeContainer>
 );
 
