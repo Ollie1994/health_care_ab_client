@@ -16,8 +16,8 @@ import {
   CheckboxLabel,
   CheckboxInput,
   CheckboxText,
-  PrimaryButton,
 } from "../styles/RegisterStyle";
+import { Button } from "./Button";
 
 function Register() {
   const navigate = useNavigate();
@@ -31,6 +31,7 @@ function Register() {
   });
   const [acceptedPolicy, setAcceptedPolicy] = useState(false);
   const [error, setError] = useState("");
+  const [success, setSuccess] = useState("");
 
   const handleInputChange = (e) => {
     setFormData((prev) => ({ ...prev, [e.target.name]: e.target.value }));
@@ -51,29 +52,36 @@ function Register() {
         formData
       );
 
-      console.log("Registration successful:", response.data);
+      // Success message
+      setSuccess("Registration successful!");
+      setTimeout(() => {
       navigate("/login");
-      } catch (error) {
-        console.error("Registration failed:", error.response || error);
-        setError("Registration failed. Please try again.");
-        }
-      };
+      }, 1500);
+    } catch (error) {
+      if (error.response?.status === 409) {
+        setError("Username already exists. Please choose another one.")
+      } else {
+      console.error("Registration failed:", error.response || error);
+      setError("Registration failed. Please try again.");
+    }
+  }
+  };
 
   return (
     <PageContainer>
       <LeftPanel>
-          <LogoText>HealthCare AB</LogoText>
+        <LogoText>HealthCare AB</LogoText>
       </LeftPanel>
       <RightPanel>
         <FormCard>
           <FormCardInner>
-          <Heading>Hey there</Heading>
-          <SubHeading>
-            Already have an account? <a href="/login">Log in</a>
-          </SubHeading>
+            <Heading>Hey there</Heading>
+            <SubHeading>
+              Already have an account? <a href="/login">Log in</a>
+            </SubHeading>
+            {error && <p style={{ color: "red", fontSize: "14px" }}>{error}</p>}
+          {success && (<p style={{ color: "green", fontSize: "14px" }}>{success}</p>)}
           </FormCardInner>
-
-          {error && <p style={{ color: "red", fontSize: "14px" }}>{error}</p>}
 
           <StyledForm onSubmit={handleRegister}>
             <Label htmlFor="username">Username</Label>
@@ -134,15 +142,15 @@ function Register() {
             />
             <CheckboxLabel>
               <CheckboxInput
-              type="checkbox"
-              checked={acceptedPolicy}
-              onChange={(e) => setAcceptedPolicy(e.target.checked)}
-            />
-            <CheckboxText>
-              Please read and accept the <a href="#">Privacy Policy</a>
-            </CheckboxText>
+                type="checkbox"
+                checked={acceptedPolicy}
+                onChange={(e) => setAcceptedPolicy(e.target.checked)}
+              />
+              <CheckboxText>
+                Please read and accept the <a href="#">Privacy Policy</a>
+              </CheckboxText>
             </CheckboxLabel>
-            <PrimaryButton type="submit">Sign Up</PrimaryButton>
+            <Button type="submit">Sign Up</Button>
           </StyledForm>
         </FormCard>
       </RightPanel>

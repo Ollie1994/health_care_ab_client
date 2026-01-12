@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import healthCarePicture from "../assets/health_care_picture.png";
 
 // Layout
 export const PageContainer = styled.div`
@@ -10,7 +11,7 @@ export const PageContainer = styled.div`
 export const LeftPanel = styled.div`
   flex: 1;
   background: linear-gradient(rgba(25, 60, 120, 0.75), rgba(25, 60, 120, 0.75)),
-    url("/assets/health_care_picture.png") center/cover;
+    url(${healthCarePicture}) center/cover;
   display: flex;
   justify-content: center;
 `;
@@ -21,7 +22,7 @@ export const RightPanel = styled.div`
   align-items: flex-start;
   justify-content: center;
   background: #fff;
-  overflow-y: auto;
+  overflow: hidden;
 `;
 
 // Health Care AB text
@@ -32,30 +33,35 @@ export const LogoText = styled.h1`
   margin-top: 5rem;
 `;
 
-// Form Card
+// Register Form Card
 export const FormCard = styled.div`
-  width: 70%;
-  margin: 2rem 0;
-  border: 5px solid black;
+  width: 90%;
+  max-width: 420px;
+  max-height: 100%; // <- Tvinga att passa i parent
+  overflow: hidden; // <- Inget scroll
+  display: flex;
+  flex-direction: column;
 `;
 
 // Containing Heading and SubHeading
 export const FormCardInner = styled.div`
-  max-width: 100%;  
+  max-width: 100%;
   text-align: center;
+  flex-shrink: 0;
 `;
 
 // Typography
 export const Heading = styled.h2`
-  font-size: 2rem;
+  font-size: 1.5rem;
   font-weight: bold;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.25rem;
+  margin-top: 0;
 `;
 
 export const SubHeading = styled.p`
   font-size: 14px;
   color: #5a5a5a;
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
 
   a {
     color: #0073e6;
@@ -68,11 +74,13 @@ export const SubHeading = styled.p`
   }
 `;
 
-// Form
+// Register Form
 export const StyledForm = styled.form`
   display: flex;
   flex-direction: column;
-  gap: 1.25rem;
+  gap: 0.5rem; // <- Minska gap drastiskt
+  flex: 1; // <- Ta allt tillgängligt utrymme
+  overflow: hidden;
 `;
 
 export const Label = styled.label`
@@ -84,14 +92,14 @@ export const Label = styled.label`
 
 export const Input = styled.input`
   width: 100%;
-  padding: 12px 14px;
+  padding: 8px 12px;
   border: 1px solid #ddd;
   border-radius: 8px;
   font-size: 14px;
   background: #fafafa;
 `;
 
-// Checkbox wrapper 
+// Checkbox wrapper
 export const CheckboxLabel = styled.label`
   display: flex;
   align-items: center;
@@ -115,26 +123,5 @@ export const CheckboxText = styled.span`
     &:hover {
       text-decoration: underline;
     }
-  }
-`;
-
-// Button
-export const PrimaryButton = styled.button`
-  width: 100%;
-  padding: 12px;
-  margin-top: 0.5rem;
-  border: none;
-  border-radius: 8px;
-  background: #0073e6;
-  color: #fff;
-  font-size: 15px;
-  font-weight: bold;
-  cursor: pointer;
-  transition: all 0.2s;
-
-  &:hover {
-    background: #005cb7;
-    transform: translateY(-2px);
-    box-shadow: 0 6px 16px rgba(91, 134, 229, 0.3);
   }
 `;
