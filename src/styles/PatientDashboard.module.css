@@ -1,0 +1,11 @@
+.flexbox {
+    display: flex;
+    background-color: aqua;
+    width: 100%;
+    height: fit-content;
+}
+
+.button {
+    width: fit-content;
+    background-color: red;
+}
