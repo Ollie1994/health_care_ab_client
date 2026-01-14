@@ -8,6 +8,7 @@ import { AuthProvider } from "./context/AuthContext";
 import Login from "./components/Login";
 import PatientDashboard from "./components/PatientDashboard";
 import CaregiverDashboard from "./components/CaregiverDashboard";
+import ProfilePage from "./components/ProfilePage"
 import Unauthorized from "./components/Unauthorized";
 import Home from "./components/Home";
 import RequireAuth from "./components/RequireAuth";
@@ -42,6 +43,14 @@ function App() {
               element={
                 <RequireAuth allowedRoles={["CAREGIVER"]}>
                   <CaregiverDashboard />
+                </RequireAuth>
+              }
+            />
+            <Route
+              path="/profile"
+              element={
+                <RequireAuth allowedRoles={["PATIENT", "CAREGIVER"]}>
+                  <ProfilePage />
                 </RequireAuth>
               }
             />
