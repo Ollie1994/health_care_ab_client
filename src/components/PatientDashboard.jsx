@@ -1,8 +1,6 @@
 import { useAuth } from "../hooks/useAuth";
 import Logo from "../assets/health_care_logo.svg";
 import styled from "styled-components";
-import styles from "../styles/PatientDashboard.module.css";
-import { Button } from "./Button";
 import Logout from "./Logout";
 
 // Styled components for user dashboard layout
@@ -32,21 +30,12 @@ function PatientDashboard() {
   } = useAuth();
 
   return (
-    /*<PatientContainer>
+    <PatientContainer>
       <LogoContainer src={Logo} alt="Health Care Logo" />
       <Title>Patient Dashboard</Title>
       <Text>Welcome, {user}!</Text>
       <Logout />
-    </PatientContainer>*/
-
-    <div>
-    <div className={styles.flexbox}>
-      <h3>FirstName LastName</h3>
-      <Button className={styles.button} children={
-        <h3>Edit</h3>
-      }/>
-    </div>
-    </div>
+    </PatientContainer>
   );
 }
 
