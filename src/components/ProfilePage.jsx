@@ -1,7 +1,6 @@
 import { useAuth } from "../hooks/useAuth";
 import Logo from "../assets/health_care_logo.svg";
 import styled from "styled-components";
-import Logout from "./Logout";
 import GreetingHeader from "./GreetingHeader";
 
 const PatientContainer = styled.div`
