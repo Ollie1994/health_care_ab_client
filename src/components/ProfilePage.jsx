@@ -10,15 +10,34 @@ const PatientContainer = styled.div`
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  background-color: #3e4146;
 `;
 
-const Title = styled.h2`
-  font-size: 22px;
+const InfoContainer = styled.div`
+  background-color: #b0b396;
+  display: flex;
+  width: 95%;
+  height: fit-content;
+  border-radius: 10px;
 `;
 
-const Text = styled.p`
-  font-size: 18px;
+const HorizontalFlex = styled.div`
+  display: flex;
+  align-items: center;
+  background-color: #e06e6e;
+  line-height: 1rem;
+  padding-top: 1rem;
 `;
+
+const ImgContainer = styled.img`
+  height: 5rem;
+`;
+
+const Name = styled.h3`
+  font-size: 20px;
+  font-weight: 500;
+`;
+
 
 function ProfilePage() {
   const {
@@ -28,8 +47,12 @@ function ProfilePage() {
   return (
     <PatientContainer>
       <GreetingHeader />
-      <Title>Jane Doe</Title>
-      <Text>Welcome, {user}!</Text>
+      <InfoContainer>
+        <HorizontalFlex>
+            <ImgContainer src={Logo} alt="Health Care Logo" />
+            <Name>Jane Doe</Name>
+        </HorizontalFlex>
+      </InfoContainer>
     </PatientContainer>
   );
 }
