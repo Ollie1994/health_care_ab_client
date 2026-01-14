@@ -4,7 +4,6 @@ import styled from "styled-components";
 import Logout from "./Logout";
 import GreetingHeader from "./GreetingHeader";
 
-// Styled components for user dashboard layout
 const PatientContainer = styled.div`
   display: flex;
   align-items: center;
@@ -26,18 +25,25 @@ const HorizontalFlex = styled.div`
   align-items: center;
   background-color: #e06e6e;
   line-height: 1rem;
-  padding-top: 1rem;
+`;
+
+const VerticalFlex = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #e06e6e;
+  line-height: 1rem;
 `;
 
 const ImgContainer = styled.img`
   height: 5rem;
+  background-color: #b0b396;
 `;
 
 const Name = styled.h3`
   font-size: 20px;
   font-weight: 500;
 `;
-
 
 function ProfilePage() {
   const {
@@ -48,10 +54,12 @@ function ProfilePage() {
     <PatientContainer>
       <GreetingHeader />
       <InfoContainer>
-        <HorizontalFlex>
+        <VerticalFlex>
+          <HorizontalFlex>
             <ImgContainer src={Logo} alt="Health Care Logo" />
             <Name>Jane Doe</Name>
-        </HorizontalFlex>
+          </HorizontalFlex>
+        </VerticalFlex>
       </InfoContainer>
     </PatientContainer>
   );
