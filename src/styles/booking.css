@@ -1,0 +1,67 @@
+/* container for booking page */
+.booking-container {
+  min-height: 100vh;
+  background: #f5f6f8;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* booking form */
+.booking-form {
+  background: #ffffff;
+  width: 900px;
+  padding: 2rem;
+  border-radius: 16px;
+  display: grid;
+  gap: 2rem;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.08);
+}
+
+/* column */
+.booking-column {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+/* title */
+.booking-title {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+/* labels */
+.booking-label {
+  font-size: 14px;
+  font-weight: bold;
+  color: #333;
+}
+
+/* inputs */
+.booking-select,
+.booking-textarea {
+  width: 100%;
+  padding: 8px 12px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  background: #fafafa;
+  font-size: 14px;
+}
+
+/* add/remove */
+.booking-addRemove {
+  font-size: 13px;
+}
+
+.booking-addRemove .add {
+  color: green;
+  margin-right: 1rem;
+  cursor: pointer;
+}
+
+.booking-addRemove .remove {
+  color: red;
+  cursor: pointer;
+}
