@@ -1,0 +1,44 @@
+.profileContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #3e4146;
+  gap: 1rem;
+}
+
+.infoContainer {
+  background-color: rgb(221, 221, 221);
+  display: flex;
+  width: 95%;
+  border-radius: 10px;
+  justify-content: space-between;
+  align-items: center;
+  overflow: hidden;
+}
+
+.verticalFlex {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #e06e6e;
+  line-height: 1rem;
+}
+
+.horizontalFlex {
+  display: flex;
+  align-items: center;
+  background-color: #e06e6e;
+  line-height: 1rem;
+}
+
+.logo {
+  height: 5rem;
+  background-color: #b0b396;
+}
+
+.name {
+  font-size: 20px;
+  font-weight: 500;
+  margin-left: 0.5rem;
+}

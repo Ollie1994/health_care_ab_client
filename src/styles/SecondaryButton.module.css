@@ -1,0 +1,31 @@
+.secondaryButton {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+
+  height: fit-content;
+
+  padding: 0.6rem 1rem;
+  background: transparent;
+
+  border: 2px solid #4a90e2;
+  border-radius: 6px;
+
+  color: #4a90e2;
+  font-size: 0.95rem;
+  font-weight: 500;
+
+  cursor: pointer;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.secondaryButton:hover {
+  background-color: #4a90e2;
+  color: #ffffff;
+}
+
+.icon {
+  width: 18px;
+  height: 18px;
+  fill: currentColor;
+}
