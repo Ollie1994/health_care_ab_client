@@ -8,10 +8,10 @@
   padding: 0.6rem 1rem;
   background: transparent;
 
-  border: 2px solid #4a90e2;
+  border: 2px solid #434966;
   border-radius: 6px;
 
-  color: #4a90e2;
+  color: #434966;
   font-size: 0.95rem;
   font-weight: 500;
 
@@ -20,12 +20,12 @@
 }
 
 .secondaryButton:hover {
-  background-color: #4a90e2;
+  background-color: #434966;
   color: #ffffff;
 }
 
 .icon {
   width: 18px;
   height: 18px;
-  fill: currentColor;
+  color: #434966;
 }

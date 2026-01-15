@@ -1,44 +1,52 @@
+body {
+  background-color: #F6F6F6;
+}
+
 .profileContainer {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background-color: #3e4146;
   gap: 1rem;
 }
 
 .infoContainer {
-  background-color: rgb(221, 221, 221);
   display: flex;
   width: 95%;
   border-radius: 10px;
   justify-content: space-between;
   align-items: center;
   overflow: hidden;
+  padding: 1rem;
+  background-color: #FFFFFF;
+
+  border: solid;
+  border-color: #e6dbdb;
+  border-width: 2px;
 }
 
 .verticalFlex {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: #e06e6e;
   line-height: 1rem;
 }
 
 .horizontalFlex {
   display: flex;
   align-items: center;
-  background-color: #e06e6e;
   line-height: 1rem;
 }
 
 .logo {
   height: 5rem;
-  background-color: #b0b396;
+}
+
+h3 {
+  color: #434966;
 }
 
 .name {
-  font-size: 20px;
-  font-weight: 500;
-  margin-left: 0.5rem;
+  color: #434966;
+  font-weight: 600;
 }

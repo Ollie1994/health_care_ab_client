@@ -3,6 +3,7 @@ import Logo from "../assets/health_care_logo.svg";
 import GreetingHeader from "./GreetingHeader";
 import styles from "../styles/ProfilePage.module.css";
 import SecondaryButton from "./SecondaryButton";
+import EditIcon from "../assets/editIcon";
 
 function ProfilePage() {
   const {
@@ -13,30 +14,18 @@ function ProfilePage() {
     <div className={styles.profileContainer}>
       <GreetingHeader />
       <div className={styles.infoContainer}>
-        <div className={styles.verticalFlex}>
           <div className={styles.horizontalFlex}>
             <img
               src={Logo}
               alt="Health Care Logo"
               className={styles.logo}
             />
-            <h3 className={styles.name}>Jane Doe</h3>
+            <h4 className={styles.name}>Jane Doe</h4>
           </div>
-        </div>
-          <SecondaryButton text={"Edit"}/>
       </div>
       <div className={styles.infoContainer}>
-        <div className={styles.verticalFlex}>
-          <div className={styles.horizontalFlex}>
-            <img
-              src={Logo}
-              alt="Health Care Logo"
-              className={styles.logo}
-            />
-            <h3 className={styles.name}>Jane Doe</h3>
-          </div>
-        </div>
-          <SecondaryButton text={"Edit"}/>
+            <h3 className={styles.sectionTitle}>Personal Information</h3>
+          <SecondaryButton text={"Edit"} icon={EditIcon}/>
       </div>
     </div>
   );

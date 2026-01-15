@@ -7,7 +7,7 @@ const GlobalStyle = createGlobalStyle`
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: "Roboto", sans-serif;
+    font-family: "Inter", sans-serif;
     width: 100vw;
     height: 100vh;
   }
@@ -21,6 +21,23 @@ const GlobalStyle = createGlobalStyle`
   *, *::before, *::after {
     box-sizing: inherit;
   }
+
+  h3 {
+  font-size: 18px;
+  font-weight: 600;
+  }
+
+  h4 {
+  font-size: 16px;
+  font-weight: 500;
+  }
+
+  h5 {
+  font-size: 14px;
+  font-weight: 400;
+  }
+
+
 
 `;
 
