@@ -27,5 +27,15 @@
 .icon {
   width: 18px;
   height: 18px;
+}
+
+.noBorderButton {
+  border: none;
+  color: #0073E6;
+}
+
+.noBorderButton:hover {
+  border: none;
+  background-color: transparent;
   color: #434966;
 }

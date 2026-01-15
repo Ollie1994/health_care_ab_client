@@ -6,6 +6,7 @@ import SecondaryButton from "./SecondaryButton";
 import EditIcon from "../assets/editIcon";
 import UserIcon from "../assets/userIcon";
 import { InfoSection } from "./ProfileInformationSection";
+import buttonStyles from "../styles/SecondaryButton.module.css";
 
 function ProfilePage() {
   const {
@@ -24,9 +25,11 @@ function ProfilePage() {
       <div className={`${styles.infoContainer} ${styles.verticalLeft}`}>
         <div className={styles.sectionTitle}>
           <h3>Personal Information</h3>
-          <SecondaryButton text={"Edit"} icon={EditIcon} />
+          <SecondaryButton icon={EditIcon}>
+            <h5>Edit</h5>
+            </SecondaryButton>
         </div>
-        <div className={styles.horizontalFlex}>
+        <div className={`${styles.horizontalFlex} ${styles.extraBottomPadding}`}>
           <div className={styles.informationSection}>
             <InfoSection title={`Username`} paragraph={`ani.caval`} />
             <InfoSection
@@ -41,6 +44,17 @@ function ProfilePage() {
               paragraph={`07/01/1997 - xxxx`}
             />
           </div>
+        </div>
+      </div>
+            <div className={`${styles.infoContainer} ${styles.verticalLeft}`}>
+        <div className={styles.sectionTitle}>
+          <h3>Personal Information</h3>
+          <SecondaryButton icon={EditIcon} className={buttonStyles.noBorderButton}>
+            <h4 className={styles.viewAllText}>View All</h4>
+          </SecondaryButton>
+        </div>
+        <div className={`${styles.horizontalFlex} ${styles.extraBottomPadding}`}>
+
         </div>
       </div>
     </div>
