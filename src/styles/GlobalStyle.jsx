@@ -10,6 +10,7 @@ const GlobalStyle = createGlobalStyle`
     font-family: "Inter", sans-serif;
     width: 100vw;
     height: 100vh;
+    line-height: normal;
   }
 
   .link {
@@ -20,6 +21,16 @@ const GlobalStyle = createGlobalStyle`
 
   *, *::before, *::after {
     box-sizing: inherit;
+  }
+
+  h1 {
+  font-size: 40px;
+  font-weight: 700;
+  }
+
+  h2 {
+  font-size: 32px;
+  font-weight: 700;
   }
 
   h3 {
