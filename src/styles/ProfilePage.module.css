@@ -1,4 +1,5 @@
 body {
+  width: 100%;
   background-color: #F6F6F6;
 }
 
@@ -19,6 +20,25 @@ body {
   align-items: center;
   overflow: hidden;
   padding: 1rem 2rem 1.5rem 2rem;
+  background-color: #FFFFFF;
+
+  gap: 0.5rem;
+  
+  border: solid;
+  border-color: #e6dbdb;
+  border-width: 1px;
+
+  color: #434966;
+}
+
+.nameContainer {
+  display: flex;
+  width: 95%;
+  border-radius: 10px;
+  justify-content: flex-start;
+  align-items: center;
+  overflow: hidden;
+  padding: .5rem 2rem;
   background-color: #FFFFFF;
 
   gap: 0.5rem;
@@ -91,12 +111,16 @@ body {
   justify-content: space-between;
 }
 
-.infoBox h4 {
-  font-weight: 600;
-}
-
 .verticalDivider {
   height: auto;
   width: 1px;
   background-color: #e6dbdb;
+}
+
+.infoBox h4 {
+  font-weight: 600;
+}
+
+.buttonText {
+  font-weight: 400 !important;
 }

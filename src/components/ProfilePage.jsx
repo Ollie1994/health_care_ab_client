@@ -44,7 +44,7 @@ function ProfilePage() {
     <div className={styles.profileContainer}>
       <GreetingHeader />
       {/* NAME */}
-      <div className={styles.infoContainer}>
+      <div className={styles.nameContainer}>
         <div className={styles.nameSection}>
           <UserIcon className={styles.icon} />
           <h1 className={styles.name}>Jane Doe</h1>
@@ -101,14 +101,14 @@ function ProfilePage() {
             <div className={styles.infoBox}>
               <h4>Change Password</h4>
               <SecondaryButton>
-            <h4 className={styles.viewAllText}>Change</h4>
+             <h4 className={styles.buttonText}>Change</h4>
           </SecondaryButton>
             </div>
             <div className={styles.verticalDivider}></div>
             <div className={styles.infoBox}>
               <h4>Notifications</h4>
               <SecondaryButton>
-              <h4 className={styles.viewAllText}>Enable</h4>
+              <h4 className={styles.buttonText}>Enable</h4>
             </SecondaryButton>
             </div>
           </div>
