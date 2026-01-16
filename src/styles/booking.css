@@ -2,27 +2,31 @@
 .booking-container {
   min-height: 100vh;
   background: #f5f6f8;
-  display: flex;
+  display:flex;
   justify-content: center;
   align-items: center;
 }
 
-/* booking form */
+/* booking form and calendar containers*/
 .booking-form {
   background: #ffffff;
   width: 900px;
   padding: 2rem;
   border-radius: 16px;
-  display: grid;
+  display: flex;
   gap: 2rem;
   box-shadow: 0 12px 32px rgba(0, 0, 0, 0.08);
+  border: 2px solid red;
 }
 
 /* column */
-.booking-column {
+.booking-column,
+.booking-calendar {
   display: flex;
   flex-direction: column;
   gap: 0.75rem;
+  border: 2px solid blue;
+  flex: 1;
 }
 
 /* title */
@@ -30,6 +34,33 @@
   font-size: 1.2rem;
   font-weight: bold;
   margin-bottom: 0.5rem;
+}
+
+/* month text */
+.booking-calendarHeader {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  font-weight: bold;
+}
+
+/* days layout */
+.booking-weekdays,
+.booking-days {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  text-align: center;
+}
+
+.booking-day {
+  padding: 0.5rem;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.booking-day.active {
+  background: #4c9bd6;
+  color: white;
 }
 
 /* labels */
