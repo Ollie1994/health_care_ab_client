@@ -1,0 +1,133 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  width: 100%;
+  background-color: #F6F6F6;
+  overflow-x: hidden; /* prevent horizontal scroll as safety */
+}
+
+.profileContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  padding-bottom: 4rem;
+}
+
+.infoContainer {
+  display: flex;
+  width: 95%;
+  border-radius: 10px;
+  justify-content: space-between;
+  align-items: center;
+  overflow: hidden;
+  padding: 1rem 2rem 1.5rem 2rem;
+  background-color: #FFFFFF;
+
+  gap: 0.5rem;
+  
+  border: solid;
+  border-color: #e6dbdb;
+  border-width: 1px;
+
+  color: #434966;
+}
+
+.nameContainer {
+  display: flex;
+  width: 95%;
+  border-radius: 10px;
+  justify-content: flex-start;
+  align-items: center;
+  overflow: hidden;
+  padding: .5rem 2rem;
+  background-color: #FFFFFF;
+
+  gap: 0.5rem;
+  
+  border: solid;
+  border-color: #e6dbdb;
+  border-width: 1px;
+
+  color: #434966;
+}
+
+.nameSection {
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-start;
+  gap: 1.5rem;
+  margin: 1rem 0rem;
+}
+
+.name {
+  margin-top: 0;
+  margin-bottom: .5rem; 
+}
+
+.icon {
+  width: 70px;
+  height: 70px;
+}
+
+.verticalLeft {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.horizontalFlex {
+  display: flex;
+  gap: 3rem;
+}
+
+.sectionTitle {
+  width: 100%;
+  height: fit-content;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.informationSection {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.viewAllText {
+  font-weight: 700;
+}
+
+.flexBetweenContainer {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.infoBox {
+  flex: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.verticalDivider {
+  height: auto;
+  width: 1px;
+  background-color: #e6dbdb;
+}
+
+.infoBox h4 {
+  font-weight: 600;
+}
+
+.buttonText {
+  font-weight: 400 !important;
+}

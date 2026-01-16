@@ -1,0 +1,49 @@
+.secondaryButton {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+
+  height: fit-content;
+
+  padding: 0.6rem 1rem;
+  background: transparent;
+
+  border: 1px solid #434966;
+  border-radius: 6px;
+
+  color: #434966;
+  font-size: 0.95rem;
+  font-weight: 500;
+
+  cursor: pointer;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.secondaryButton:hover {
+  background-color: #434966;
+  color: #ffffff;
+}
+
+.secondaryButton:hover .children{
+  color: #ffffff;
+}
+
+.icon {
+  width: 18px;
+  height: 18px;
+}
+
+.noBorderButton {
+  border: none;
+  color: #0073E6;
+}
+
+.noBorderButton:hover {
+  border: none;
+  background-color: transparent;
+  color: #434966;
+}
+
+.noBorderButton:hover .children {
+  color: #434966;
+}
