@@ -87,11 +87,18 @@ function ProfilePage() {
             <h4 className={styles.viewAllText}>View All</h4>
           </SecondaryButton>
         </div>
+        {history.length > 0 
+        ? 
         <div className={styles.flexBetweenContainer}>
           {history.slice(0, 4).map((item) => (
             <HistoryInfoContainer key={item.bookingId} fullName={item.fullName} date={formatDate(item.startDateTime)}/>
           ))}
         </div>
+        :
+        <div className={styles.flexBetweenContainer}>
+          <h4>None yet!</h4>
+        </div>
+        }
       </div>
       {/* GENERAL */}
       <div className={`${styles.infoContainer} ${styles.verticalLeft}`}>
