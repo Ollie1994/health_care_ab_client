@@ -48,6 +48,15 @@ const GlobalStyle = createGlobalStyle`
   font-weight: 400;
   }
 
+  h6 {
+  font-size: 12px;
+  font-weight: 400;
+  }
+
+  p {
+  font-size: 10px;
+  font-weight: 400;
+  }
 
 
 `;

@@ -5,8 +5,10 @@ import styles from "../styles/ProfilePage.module.css";
 import SecondaryButton from "./SecondaryButton";
 import EditIcon from "../assets/editIcon";
 import UserIcon from "../assets/userIcon";
+import ChevronRight from "../assets/chevronRight"
 import { InfoSection } from "./ProfileInformationSection";
 import buttonStyles from "../styles/SecondaryButton.module.css";
+import HistoryInfoContainer from "./HistoryInfoContainer";
 
 function ProfilePage() {
   const {
@@ -16,17 +18,19 @@ function ProfilePage() {
   return (
     <div className={styles.profileContainer}>
       <GreetingHeader />
+      {/* NAME */}
       <div className={styles.infoContainer}>
         <div className={styles.nameSection}>
           <UserIcon className={styles.icon} />
           <h1 className={styles.name}>Jane Doe</h1>
         </div>
       </div>
+      {/* PERSONAL INFO */}
       <div className={`${styles.infoContainer} ${styles.verticalLeft}`}>
         <div className={styles.sectionTitle}>
           <h3>Personal Information</h3>
           <SecondaryButton icon={EditIcon}>
-            <h5>Edit</h5>
+            <h4>Edit</h4>
             </SecondaryButton>
         </div>
         <div className={`${styles.horizontalFlex} ${styles.extraBottomPadding}`}>
@@ -46,15 +50,16 @@ function ProfilePage() {
           </div>
         </div>
       </div>
-            <div className={`${styles.infoContainer} ${styles.verticalLeft}`}>
+      {/* BOOKING HISTORY */}
+      <div className={`${styles.infoContainer} ${styles.verticalLeft}`}>
         <div className={styles.sectionTitle}>
-          <h3>Personal Information</h3>
-          <SecondaryButton icon={EditIcon} className={buttonStyles.noBorderButton}>
+          <h3>History</h3>
+          <SecondaryButton icon={ChevronRight} className={buttonStyles.noBorderButton}>
             <h4 className={styles.viewAllText}>View All</h4>
           </SecondaryButton>
         </div>
         <div className={`${styles.horizontalFlex} ${styles.extraBottomPadding}`}>
-
+          <HistoryInfoContainer/>
         </div>
       </div>
     </div>

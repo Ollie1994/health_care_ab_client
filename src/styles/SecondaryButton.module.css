@@ -8,7 +8,7 @@
   padding: 0.6rem 1rem;
   background: transparent;
 
-  border: 2px solid #434966;
+  border: 1px solid #434966;
   border-radius: 6px;
 
   color: #434966;
@@ -21,6 +21,10 @@
 
 .secondaryButton:hover {
   background-color: #434966;
+  color: #ffffff;
+}
+
+.secondaryButton:hover .children{
   color: #ffffff;
 }
 
@@ -37,5 +41,9 @@
 .noBorderButton:hover {
   border: none;
   background-color: transparent;
+  color: #434966;
+}
+
+.noBorderButton:hover .children {
   color: #434966;
 }
