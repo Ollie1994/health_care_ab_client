@@ -13,23 +13,62 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 
 function ProfilePage() {
+  const {
+    authState: { user },
+  } = useAuth();
+
   const [history, setHistory] = useState([]);
+  const [age, setAge] = useState(null);
 
   useEffect(() => {
-    const fetchProfile = async () => {
-      try {
-        const response = await axios.get(
-          "http://localhost:8080/booking/history",
-          { withCredentials: true }
-        );
-        setHistory(response.data);
-      } catch (error) {
-        console.error("Failed to fetch history:", error.response || error);
-      }
-    };
+  const fetchProfile = async () => {
+    try {
+      const response = await axios.get(
+        "http://localhost:8080/booking/history",
+        { withCredentials: true }
+      );
+      setHistory(response.data);
+    } catch (error) {
+      console.error("Failed to fetch history:", error.response || error);
+    }
+  };
 
-    fetchProfile();
-  }, []);
+  fetchProfile();
+}, []);
+
+const calculateAgeFromSSN = (ssn) => {
+  if (!ssn) return `unknown`;
+
+  const [datePart] = ssn.split("-");
+  const year = parseInt(datePart.slice(0, 2), 10);
+  const month = parseInt(datePart.slice(2, 4), 10) - 1;
+  const day = parseInt(datePart.slice(4, 6), 10);
+
+  const currentYear = new Date().getFullYear() % 100;
+  const fullYear = year > currentYear ? 1900 + year : 2000 + year;
+
+  const birthDate = new Date(fullYear, month, day);
+  const today = new Date();
+
+  let age = today.getFullYear() - birthDate.getFullYear();
+  const hasHadBirthday =
+    today.getMonth() > birthDate.getMonth() ||
+    (today.getMonth() === birthDate.getMonth() &&
+      today.getDate() >= birthDate.getDate());
+
+  return hasHadBirthday ? age : age - 1;
+};
+
+const formatSSN = (ssn) => {
+  if (!ssn) return "";
+
+  const [datePart] = ssn.split("-");
+  const yy = datePart.slice(0, 2);
+  const mm = datePart.slice(2, 4);
+  const dd = datePart.slice(4, 6);
+
+  return `${yy}/${mm}/${dd}-XXXX`;
+};
 
   const formatDate = (isoDate) => {
   const d = new Date(isoDate);
@@ -46,7 +85,7 @@ function ProfilePage() {
       <div className={styles.nameContainer}>
         <div className={styles.nameSection}>
           <UserIcon className={styles.icon} />
-          <h1 className={styles.name}>Jane Doe</h1>
+          <h1 className={styles.name}>{user.firstName + " " + user.lastName}</h1>
         </div>
       </div>
       {/* PERSONAL INFO */}
@@ -61,17 +100,17 @@ function ProfilePage() {
           className={`${styles.horizontalFlex} ${styles.extraBottomPadding}`}
         >
           <div className={styles.informationSection}>
-            <InfoSection title={`Username`} paragraph={`ani.caval`} />
+            <InfoSection title={`Username`} paragraph={user.username} />
             <InfoSection
               title={`Email Address`}
-              paragraph={`ani.cavalanti@gmail.com`}
+              paragraph={user.email}
             />
           </div>
           <div className={styles.informationSection}>
-            <InfoSection title={`Age`} paragraph={`26`} />
+            <InfoSection title={`Age`} paragraph={calculateAgeFromSSN(user.socialSecurityNumber)} />
             <InfoSection
               title={`Date of birth`}
-              paragraph={`07/01/1997 - xxxx`}
+              paragraph={formatSSN(user.socialSecurityNumber)}
             />
           </div>
         </div>
