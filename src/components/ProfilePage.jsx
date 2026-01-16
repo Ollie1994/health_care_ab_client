@@ -88,11 +88,30 @@ function ProfilePage() {
             <h4 className={styles.viewAllText}>View All</h4>
           </SecondaryButton>
         </div>
-        <div className={styles.mainHistoryContainer}>
+        <div className={styles.flexBetweenContainer}>
           {history.slice(0, 4).map((item) => (
             <HistoryInfoContainer key={item.bookingId} fullName={item.fullName} date={formatDate(item.startDateTime)}/>
           ))}
         </div>
+      </div>
+      {/* GENERAL */}
+      <div className={`${styles.infoContainer} ${styles.verticalLeft}`}>
+          <h3>General</h3>
+          <div className={`${styles.flexBetweenContainer}`}>
+            <div className={styles.infoBox}>
+              <h4>Change Password</h4>
+              <SecondaryButton>
+            <h4 className={styles.viewAllText}>Change</h4>
+          </SecondaryButton>
+            </div>
+            <div className={styles.verticalDivider}></div>
+            <div className={styles.infoBox}>
+              <h4>Notifications</h4>
+              <SecondaryButton>
+              <h4 className={styles.viewAllText}>Enable</h4>
+            </SecondaryButton>
+            </div>
+          </div>
       </div>
     </div>
   );

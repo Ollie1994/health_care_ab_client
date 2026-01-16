@@ -8,6 +8,7 @@ body {
   align-items: center;
   justify-content: center;
   gap: 1rem;
+  padding-bottom: 4rem;
 }
 
 .infoContainer {
@@ -76,9 +77,23 @@ body {
     font-weight: 700;
 }
 
-.mainHistoryContainer {
+.flexBetweenContainer {
   width: 100%;
   display: flex;
   justify-content: space-between;
   gap: 1rem;
+}
+
+.infoBox {
+  flex: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: .5rem;
+}
+
+.verticalDivider {
+  height: auto;
+  width: 1px;
+  background-color: #e6dbdb;
 }
