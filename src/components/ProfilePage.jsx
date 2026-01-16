@@ -60,7 +60,7 @@ const calculateAgeFromSSN = (ssn) => {
 };
 
 const formatSSN = (ssn) => {
-  if (!ssn) return "";
+  if (!ssn) return "unknown";
 
   const [datePart] = ssn.split("-");
   const yy = datePart.slice(0, 2);
