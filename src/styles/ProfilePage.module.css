@@ -1,6 +1,13 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
 body {
   width: 100%;
   background-color: #F6F6F6;
+  overflow-x: hidden; /* prevent horizontal scroll as safety */
 }
 
 .profileContainer {

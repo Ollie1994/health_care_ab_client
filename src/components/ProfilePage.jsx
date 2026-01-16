@@ -42,7 +42,6 @@ function ProfilePage() {
 
   return (
     <div className={styles.profileContainer}>
-      <GreetingHeader />
       {/* NAME */}
       <div className={styles.nameContainer}>
         <div className={styles.nameSection}>
