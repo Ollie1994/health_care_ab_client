@@ -72,10 +72,13 @@ body {
   gap: 1rem;
 }
 
-.extraBottomPadding {
-  padding-bottom: 1rem;
-}
-
 .viewAllText {
     font-weight: 700;
+}
+
+.mainHistoryContainer {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
 }

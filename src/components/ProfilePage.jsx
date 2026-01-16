@@ -5,15 +5,40 @@ import styles from "../styles/ProfilePage.module.css";
 import SecondaryButton from "./SecondaryButton";
 import EditIcon from "../assets/editIcon";
 import UserIcon from "../assets/userIcon";
-import ChevronRight from "../assets/chevronRight"
+import ChevronRight from "../assets/chevronRight";
 import { InfoSection } from "./ProfileInformationSection";
 import buttonStyles from "../styles/SecondaryButton.module.css";
 import HistoryInfoContainer from "./HistoryInfoContainer";
+import { useEffect, useState } from "react";
+import axios from "axios";
 
 function ProfilePage() {
-  const {
-    authState: { user, roles },
-  } = useAuth();
+  const [history, setHistory] = useState([]);
+
+  useEffect(() => {
+    const fetchProfile = async () => {
+      try {
+        const response = await axios.get(
+          "http://localhost:8080/booking/history",
+          { withCredentials: true }
+        );
+        setHistory(response.data);
+      } catch (error) {
+        console.error("Failed to fetch history:", error.response || error);
+      }
+    };
+
+    fetchProfile();
+  }, []);
+
+  const formatDate = (isoDate) => {
+  const d = new Date(isoDate);
+  return d.toLocaleDateString("en-UK", {
+    day: "2-digit",
+    month: "2-digit",
+    year: "2-digit",
+  });
+};
 
   return (
     <div className={styles.profileContainer}>
@@ -31,9 +56,11 @@ function ProfilePage() {
           <h3>Personal Information</h3>
           <SecondaryButton icon={EditIcon}>
             <h4>Edit</h4>
-            </SecondaryButton>
+          </SecondaryButton>
         </div>
-        <div className={`${styles.horizontalFlex} ${styles.extraBottomPadding}`}>
+        <div
+          className={`${styles.horizontalFlex} ${styles.extraBottomPadding}`}
+        >
           <div className={styles.informationSection}>
             <InfoSection title={`Username`} paragraph={`ani.caval`} />
             <InfoSection
@@ -54,12 +81,17 @@ function ProfilePage() {
       <div className={`${styles.infoContainer} ${styles.verticalLeft}`}>
         <div className={styles.sectionTitle}>
           <h3>History</h3>
-          <SecondaryButton icon={ChevronRight} className={buttonStyles.noBorderButton}>
+          <SecondaryButton
+            icon={ChevronRight}
+            className={buttonStyles.noBorderButton}
+          >
             <h4 className={styles.viewAllText}>View All</h4>
           </SecondaryButton>
         </div>
-        <div className={`${styles.horizontalFlex} ${styles.extraBottomPadding}`}>
-          <HistoryInfoContainer/>
+        <div className={styles.mainHistoryContainer}>
+          {history.slice(0, 4).map((item) => (
+            <HistoryInfoContainer key={item.bookingId} fullName={item.fullName} date={formatDate(item.startDateTime)}/>
+          ))}
         </div>
       </div>
     </div>
