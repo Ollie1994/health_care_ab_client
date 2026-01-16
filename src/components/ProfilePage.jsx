@@ -51,7 +51,7 @@ function ProfilePage() {
         </div>
       </div>
       {/* PERSONAL INFO */}
-      <div className={`${styles.infoContainer} ${styles.verticalLeft}`}>
+      <div className={`${styles.infoContainer} ${styles.verticalLeft} ${styles.extraBottomPadding}`}>
         <div className={styles.sectionTitle}>
           <h3>Personal Information</h3>
           <SecondaryButton icon={EditIcon}>

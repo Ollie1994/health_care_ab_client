@@ -18,7 +18,7 @@ body {
   justify-content: space-between;
   align-items: center;
   overflow: hidden;
-  padding: 1rem 2rem;
+  padding: 1rem 2rem 1.5rem 2rem;
   background-color: #FFFFFF;
 
   gap: 0.5rem;
@@ -74,7 +74,7 @@ body {
 }
 
 .viewAllText {
-    font-weight: 700;
+  font-weight: 700;
 }
 
 .flexBetweenContainer {
@@ -89,7 +89,10 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding-bottom: .5rem;
+}
+
+.infoBox h4 {
+  font-weight: 600;
 }
 
 .verticalDivider {
