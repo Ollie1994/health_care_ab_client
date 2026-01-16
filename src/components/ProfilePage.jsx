@@ -1,6 +1,4 @@
 import { useAuth } from "../hooks/useAuth";
-import Logo from "../assets/health_care_logo.svg";
-import GreetingHeader from "./GreetingHeader";
 import styles from "../styles/ProfilePage.module.css";
 import SecondaryButton from "./SecondaryButton";
 import EditIcon from "../assets/editIcon";
