@@ -34,6 +34,7 @@ function PatientDashboard() {
       <LogoContainer src={Logo} alt="Health Care Logo" />
       <Title>Patient Dashboard</Title>
       <Text>Welcome, {user}!</Text>
+      <Logout />
     </PatientContainer>
   );
 }
