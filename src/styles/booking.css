@@ -40,7 +40,7 @@
 }
 
 /* inputs */
-.booking-select,
+.booking-symptoms,
 .booking-textarea {
   width: 100%;
   padding: 8px 12px;
@@ -64,4 +64,20 @@
 .booking-addRemove .remove {
   color: red;
   cursor: pointer;
+}
+
+/* doctor info and time */
+.booking-doctorInfo,
+.booking-timeInfo {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 1rem;
+  font-size: 20px;
+}
+
+/* confirm button */
+.booking-confirmButton {
+  width: 30% !important;  /* to overwrite button component styling */
+  max-width: 400px;
+  align-self: flex-end;
 }

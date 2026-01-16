@@ -21,9 +21,9 @@ export const PrimaryButton = styled.button`
   }
 `;
 
-export const Button = ({ children, onClick, type = "button" }) => {
+export const Button = ({ children, onClick, type = "button" , className}) => {
   return (
-    <PrimaryButton type={type} onClick={onClick}>
+    <PrimaryButton type={type} onClick={onClick} className={className}>
       {children}
     </PrimaryButton>
   );
