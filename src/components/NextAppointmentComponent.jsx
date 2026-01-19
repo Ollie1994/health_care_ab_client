@@ -40,7 +40,15 @@ const NextAppointmentComponent = () => {
             </div>
         </div>
         <div className={styles.bottomContainer}>
-
+            <PrimaryButton className={`${styles.cancelButton} ${styles.optionButton}`}>
+                    <h5>Cancel</h5>
+                </PrimaryButton>
+                <PrimaryButton className={styles.optionButton}>
+                    <h5>Edit</h5>
+                </PrimaryButton>
+                <PrimaryButton className={styles.optionButton}>
+                    <h5>See More</h5>
+                </PrimaryButton>
         </div>
     </div>
   );
