@@ -11,6 +11,7 @@ const GlobalStyle = createGlobalStyle`
     width: 100vw;
     height: 100vh;
     line-height: normal;
+    background-color: #FFFFFF;
   }
 
   .link {

@@ -2,6 +2,7 @@ import { useAuth } from "../hooks/useAuth";
 import LoggedInLayout from "./LoggedInLayout"
 import dashboardImage  from "../assets/dashboard_image.png"
 import styles from "../styles/Dashboard.module.css"
+import NextAppointmentComponent from "./NextAppointmentComponent";
 
 // Only accessible to users with the "User" role
 function PatientDashboard() {
@@ -20,7 +21,10 @@ function PatientDashboard() {
           <img src={dashboardImage} alt="Dashboard Image" />
         </div>
         <div className={styles.mainContent}>
-          
+          <NextAppointmentComponent/>
+          <div className={styles.previousAppointmentContainer}>
+
+          </div>
         </div>
       </div>
     </LoggedInLayout>

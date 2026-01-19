@@ -1,6 +1,8 @@
 .mainContainer {
     width: 100%;
     display: flex;
+    flex-direction: column;
+    gap: 2rem;
     align-items: top;
     justify-content: center;
     padding: 0rem 2rem;
@@ -45,4 +47,18 @@ img {
     z-index: 2;
     padding-left: 2rem;
     color: #FFFFFF;
+}
+
+.mainContent {
+    display: flex;
+    width: 100%;
+    height: fit-content;
+    gap: 2rem;
+}
+
+.previousAppointmentContainer {
+    background-color: rgb(70, 70, 70);
+    height: max-content;
+    flex-grow: 1;
+    height: 100%;
 }
