@@ -9,6 +9,7 @@ import buttonStyles from "../styles/SecondaryButton.module.css";
 import HistoryInfoContainer from "./HistoryInfoContainer";
 import { useEffect, useState } from "react";
 import axios from "axios";
+import LoggedInLayout from "./LoggedInLayout"
 
 function ProfilePage() {
   const {
@@ -78,6 +79,7 @@ const formatSSN = (ssn) => {
 };
 
   return (
+    <LoggedInLayout pageName={`Profile`} firstName={user.firstName} lastName={user.lastName}>
     <div className={styles.profileContainer}>
       {/* NAME */}
       <div className={styles.nameContainer}>
@@ -157,6 +159,7 @@ const formatSSN = (ssn) => {
           </div>
       </div>
     </div>
+        </LoggedInLayout>
   );
 }
 
