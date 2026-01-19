@@ -21,7 +21,9 @@ const LoginButton = styled.button`
   font-weight: 600;
   color: #fff;
   margin-top: 40px;
-  transition: background-color 0.3s ease, transform 0.2s ease,
+  transition:
+    background-color 0.3s ease,
+    transform 0.2s ease,
     box-shadow 0.2s ease;
   text-align: center;
   border: none;
@@ -84,18 +86,30 @@ function Login() {
           // withCredentials: true is required for the server to set HTTP-only cookies
           // This is essential for cookie-based authentication
           withCredentials: true,
-        }
+        },
       );
 
       console.log("Login successful:", JSON.stringify(response.data));
 
-      const { loggedInUser, roles } = response.data;
+      const {
+        username,
+        email,
+        firstName,
+        lastName,
+        socialSecurityNumber,
+        roles,
+      } = response.data;
 
-      // Update global auth state with user information
       setAuthState({
         isAuthenticated: true,
-        user: loggedInUser,
-        roles: roles,
+        user: {
+          username,
+          email,
+          firstName,
+          lastName,
+          socialSecurityNumber,
+        },
+        roles,
       });
 
       // Redirect based on user role
