@@ -13,7 +13,14 @@ function PatientDashboard() {
     <LoggedInLayout pageName={`Dashboard`} firstName={user.firstName} lastName={user.lastName}>
       <div className={styles.mainContainer}>
         <div className={styles.imageContainer}>
-          {<img src={dashboardImage} alt="Dashboard Image" />}
+          <div className={styles.imageText}>
+          <h1>Healthcare you can trust.</h1>
+          <h1>Get in contact today!</h1>
+          </div>
+          <img src={dashboardImage} alt="Dashboard Image" />
+        </div>
+        <div className={styles.mainContent}>
+          
         </div>
       </div>
     </LoggedInLayout>
