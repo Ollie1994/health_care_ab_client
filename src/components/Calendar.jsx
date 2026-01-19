@@ -1,7 +1,7 @@
 import { useState } from "react";
 import "../styles/calendar.css";
 
-function Calendar() {
+function Calendar({ selectedDate, onDateSelect }) {
 
     const today = new Date();
     const [currentMonthIndex, setCurrentMonthIndex] = useState(0);
@@ -59,6 +59,9 @@ function Calendar() {
     }
   };
 
+  // Check if two dates are the same day
+  const isSameDay = (d1, d2) => d1 && d2 && d1.toDateString() === d2.toDateString();
+
   return (
     <div className="calendar-container">
         <div className="calendar-header">
@@ -86,7 +89,9 @@ function Calendar() {
 
       <div className="calendar-days">
         {displayedMonth.days.map((date, index) => (
-            <div key={index} className="calendar-day">
+            <div key={index} className={`calendar-day ${isSameDay(date, selectedDate) ? "active" : ""}`}
+            onClick={() => onDateSelect(date)}
+            >
               {date.getDate()}
             </div>
           ))}
