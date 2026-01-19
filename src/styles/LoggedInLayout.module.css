@@ -1,0 +1,17 @@
+.mainContainer {
+    width: 100vw;
+    height: fit-content;
+    display: flex;
+}
+
+.sidebar {
+    width: 230px;
+    height: 100vh;
+    background-color: bisque;
+}
+
+.mainContent {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}

@@ -1,0 +1,53 @@
+.mainContainer {
+    width: 100%;
+    display: flex;
+    align-items: top;
+    justify-content: center;
+    padding: 0rem 2rem;
+}
+
+.imageContainer {
+    height: 245px;
+    width: 100%;
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    position: relative;
+}
+
+.mainContainer {
+    width: 100%;
+    display: flex;
+    align-items: top;
+    justify-content: center;
+    padding: 0rem 2rem;
+}
+
+.imageContainer {
+    height: 245px;
+    width: 100%;
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.imageContainer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #0073E645; /* Black with 40% opacity */
+    z-index: 1;
+    pointer-events: none;
+}
+
+img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
