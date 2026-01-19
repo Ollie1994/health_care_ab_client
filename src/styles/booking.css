@@ -36,33 +36,6 @@
   margin-bottom: 0.5rem;
 }
 
-/* month text */
-.booking-calendarHeader {
-  display: flex;
-  justify-content: center;
-  gap: 1rem;
-  font-weight: bold;
-}
-
-/* days layout */
-.booking-weekdays,
-.booking-days {
-  display: grid;
-  grid-template-columns: repeat(7, 1fr);
-  text-align: center;
-}
-
-.booking-day {
-  padding: 0.5rem;
-  border-radius: 50%;
-  cursor: pointer;
-}
-
-.booking-day.active {
-  background: #4c9bd6;
-  color: white;
-}
-
 /* labels */
 .booking-label {
   font-size: 14px;

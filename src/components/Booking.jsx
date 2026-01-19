@@ -1,6 +1,8 @@
 import { useState } from "react";
 import "../styles/booking.css";
 import { Button } from "./Button";
+import Calendar from "./Calendar";
+import "../styles/calendar.css";
 
 function Booking() {
 
@@ -48,11 +50,7 @@ function Booking() {
 
         <div className="booking-calendar">
           <h3 className="booking-title">Select Date and Time</h3>
-          <div className="booking-calendarHeader">January 2026</div>
-          <div className="booking-weekdays">
-              <span>MON</span><span>TUE</span><span>WED</span>
-              <span>THU</span><span>FRI</span><span>SAT</span><span>SUN</span>
-            </div>
+          <Calendar />
             <label>Notes</label>
             <textarea placeholder="Anything you would like your caregiver to know ?" />
           </div>
