@@ -1,0 +1,15 @@
+.mainContainer {
+    display: flex;
+    flex-direction: column;
+    height: fit-content;
+    gap: .5rem;
+}
+
+h5 {
+    margin: 0;
+    color: #3D3D3D;
+}
+
+h4 {
+    margin: 0;
+}

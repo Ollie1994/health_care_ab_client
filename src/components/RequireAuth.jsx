@@ -20,8 +20,14 @@ function RequireAuth({ children, allowedRoles }) {
         });
         setAuthState({
           isAuthenticated: true,
-          user: response.data.username,
-          roles: response.data.roles,
+          user: {
+            username: response.data.username,
+            email: response.data.email,
+            firstName: response.data.firstName,
+            lastName: response.data.lastName,
+            socialSecurityNumber: response.data.socialSecurityNumber,
+          },
+          roles: response.data.roles, // can keep separately if you want quick access
         });
       } catch (error) {
         setAuthState({
