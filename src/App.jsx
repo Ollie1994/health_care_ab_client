@@ -28,10 +28,16 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/login" element={<Login />} />
             <Route path="/register" element={<Register />} />
-            <Route path="/booking" element={<Booking />} />
             <Route path="/unauthorized" element={<Unauthorized />} />
 
-            {/* Protected routes - require authentication and specific roles */}
+             {/* Protected routes - require authentication and specific roles */}
+            <Route path="/booking" 
+            element={
+            <RequireAuth allowedRoles={["PATIENT"]}>
+              <Booking />
+            </RequireAuth>
+            } />
+
             <Route
               path="/patient/dashboard"
               element={
