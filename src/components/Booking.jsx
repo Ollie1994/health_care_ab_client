@@ -4,6 +4,8 @@ import { Button } from "./Button";
 import Calendar from "./Calendar";
 import "../styles/calendar.css";
 import axios from "axios";
+import LoggedInLayout from "./LoggedInLayout";
+import { useAuth } from "../hooks/useAuth";
 
 function Booking() {
 
@@ -137,7 +139,18 @@ function Booking() {
   // Close modal
   const closeModal = () => setModalData(null);
 
+    const {
+      authState: { user },
+    } = useAuth();
+  
+
   return (
+    <LoggedInLayout
+      pageName={`New Booking`}
+      firstName={user.firstName}
+      lastName={user.lastName}
+      className="background"
+    >
     <div className="booking-container">
       <form className="booking-form" onSubmit={handleSubmit}>
         <div className="booking-calendar">
@@ -240,6 +253,7 @@ function Booking() {
         </div>
       )} 
     </div>
+    </LoggedInLayout>
   )
 }
 

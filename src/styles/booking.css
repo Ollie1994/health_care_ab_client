@@ -1,16 +1,21 @@
 /* container for booking page */
 .booking-container {
-  min-height: 100vh;
-  background: #f5f6f8;
-  display:flex;
+  display: flex;
+  width: 100%;
+  height: 100%;
   justify-content: center;
-  align-items: center;
+  padding-top: 3rem;
+}
+
+.background {
+  background-color: #F6F6F6;
 }
 
 /* booking form and calendar containers*/
 .booking-form {
   background: #ffffff;
-  width: 900px;
+  width: 80%;
+  height: fit-content;
   padding: 2rem;
   border-radius: 16px;
   display: flex;
