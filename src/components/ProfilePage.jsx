@@ -103,7 +103,7 @@ const formatSSN = (ssn) => {
             <InfoSection title={`Username`} paragraph={user.username} />
             <InfoSection
               title={`Email Address`}
-              paragraph={user.email}
+              paragraph={user?.email ?? "None"}
             />
           </div>
           <div className={styles.informationSection}>
