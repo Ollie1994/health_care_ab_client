@@ -74,6 +74,15 @@ const dayOfMonth = (dateTime) => {
   });
 };
 
+  const formatDate = (isoDate) => {
+  const d = new Date(isoDate);
+  return d.toLocaleDateString("en-UK", {
+    day: "2-digit",
+    month: "2-digit",
+    year: "2-digit",
+  });
+};
+
   return (
     <LoggedInLayout
       pageName={`Dashboard`}
@@ -122,7 +131,7 @@ const dayOfMonth = (dateTime) => {
                     >
                       <HistoryInfoContainer
                         fullName={item.fullName}
-                        date={item.startDateTime}
+                        date={formatDate(item.startDateTime)}
                       />
                     </div>
                   ))}
@@ -141,7 +150,7 @@ const dayOfMonth = (dateTime) => {
                     >
                       <HistoryInfoContainer
                         fullName={item.fullName}
-                        date={item.startDateTime}
+                        date={formatDate(item.startDateTime)}
                       />
                     </div>
                   ))}

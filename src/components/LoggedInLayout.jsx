@@ -1,19 +1,26 @@
 import Header from "./Header";
-import styles from "../styles/LoggedInLayout.module.css"
+import styles from "../styles/LoggedInLayout.module.css";
 import Logo from "../assets/logo";
 
-const LoggedInLayout = ({children, pageName, firstName, lastName, className}) => {
+const LoggedInLayout = ({
+  children,
+  pageName,
+  firstName,
+  lastName,
+  className,
+}) => {
+
   return (
     <div className={styles.mainContainer}>
       <div className={styles.sidebar}>
-        <Logo/>
+        <Logo />
       </div>
-    <div className={`${styles.mainContent} ${className}`}>
-        <Header pageName={pageName} firstName={firstName} lastName={lastName}/>
+      <div className={`${styles.mainContent} ${className}`}>
+        <Header pageName={pageName} firstName={firstName} lastName={lastName} />
         {children}
-    </div>
+      </div>
     </div>
   );
-}
+};
 
 export default LoggedInLayout;
