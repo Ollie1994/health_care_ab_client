@@ -14,6 +14,7 @@ import Home from "./components/Home";
 import RequireAuth from "./components/RequireAuth";
 import GlobalStyle from "./styles/GlobalStyle";
 import Register from "./components/Register";
+import Booking from "./components/Booking";
 
 // AuthProvider must wrap Router to ensure auth state is available to all routes
 function App() {
@@ -29,7 +30,14 @@ function App() {
             <Route path="/register" element={<Register />} />
             <Route path="/unauthorized" element={<Unauthorized />} />
 
-            {/* Protected routes - require authentication and specific roles */}
+             {/* Protected routes - require authentication and specific roles */}
+            <Route path="/booking" 
+            element={
+            <RequireAuth allowedRoles={["PATIENT"]}>
+              <Booking />
+            </RequireAuth>
+            } />
+
             <Route
               path="/patient/dashboard"
               element={
