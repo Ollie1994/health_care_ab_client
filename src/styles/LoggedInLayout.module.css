@@ -7,7 +7,16 @@
 .sidebar {
     width: 230px;
     height: 100vh;
-    background-color: bisque;
+    background-color: #FFFFFF;
+    border-right: solid;
+    border-width: 2px;
+    border-color: #E3E3E3;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 3rem;
+    color: #0073E6;
 }
 
 .mainContent {
