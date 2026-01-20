@@ -4,10 +4,8 @@
   padding: 0;
 }
 
-body {
-  width: 100%;
-  background-color: #FFFFFF;
-  overflow-x: hidden; /* prevent horizontal scroll as safety */
+.background {
+  background-color: #F6F6F6;
 }
 
 .profileContainer {

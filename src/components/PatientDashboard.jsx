@@ -38,6 +38,7 @@ function PatientDashboard() {
       pageName={`Dashboard`}
       firstName={user.firstName}
       lastName={user.lastName}
+      className={styles.background}
     >
       <div className={styles.mainContainer}>
         <div className={styles.imageContainer}>

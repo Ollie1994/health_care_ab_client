@@ -78,7 +78,8 @@ const formatSSN = (ssn) => {
 };
 
   return (
-    <LoggedInLayout pageName={`Profile`} firstName={user.firstName} lastName={user.lastName}>
+    <LoggedInLayout pageName={`Profile`} firstName={user.firstName} lastName={user.lastName} className={styles.background}
+    >
     <div className={styles.profileContainer}>
       {/* NAME */}
       <div className={styles.nameContainer}>

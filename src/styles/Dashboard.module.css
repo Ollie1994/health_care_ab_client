@@ -8,6 +8,10 @@
     padding: 0rem 2rem;
 }
 
+.background {
+    background-color: #FFFFFF;
+}
+
 .imageContainer {
     height: 245px;
     width: 100%;
