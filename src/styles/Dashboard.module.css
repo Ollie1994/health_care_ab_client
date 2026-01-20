@@ -56,9 +56,33 @@ img {
     gap: 2rem;
 }
 
-.previousAppointmentContainer {
-    background-color: rgb(70, 70, 70);
+.rightContainer {
     height: max-content;
     flex-grow: 1;
     height: 100%;
+}
+
+.topRight {
+    display: flex;
+    justify-content: space-between;
+}
+
+.viewAllText {
+    font-weight: 700;
+}
+
+.bottomRight {
+    display: flex;
+    flex-direction: column;
+}
+
+.horizontalFlex {
+    display: flex;
+    align-content: space-between;
+    align-items: center;
+}
+
+.historyContainer {
+    width: 50%;
+    padding: .5rem;
 }

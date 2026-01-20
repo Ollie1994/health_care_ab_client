@@ -17,10 +17,9 @@ function ProfilePage() {
   } = useAuth();
 
   const [history, setHistory] = useState([]);
-  const [age, setAge] = useState(null);
 
   useEffect(() => {
-  const fetchProfile = async () => {
+  const fetchHistory = async () => {
     try {
       const response = await axios.get(
         "http://localhost:8080/booking/history",
@@ -32,7 +31,7 @@ function ProfilePage() {
     }
   };
 
-  fetchProfile();
+  fetchHistory();
 }, []);
 
 const calculateAgeFromSSN = (ssn) => {
