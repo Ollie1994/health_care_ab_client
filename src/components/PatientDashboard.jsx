@@ -16,6 +16,7 @@ function PatientDashboard() {
   } = useAuth();
 
   const [history, setHistory] = useState([]);
+  const [upcoming, setUpcoming] = useState({});
 
   useEffect(() => {
     const fetchHistory = async () => {
@@ -30,8 +31,36 @@ function PatientDashboard() {
       }
     };
 
+    const fetchUpcoming = async () => {
+      try {
+        const response = await axios.get(
+          "http://localhost:8080/booking/upcoming",
+          { withCredentials: true },
+        );
+        setUpcoming(response.data);
+      } catch (error) {
+        console.error(
+          "Failed to fetch upcoming appointment:",
+          error.response || error,
+        );
+      }
+    };
+
     fetchHistory();
-  }, [history]);
+    fetchUpcoming();
+  }, []);
+
+  console.log("UPCOMING: " + JSON.stringify(upcoming));
+
+  const dayOfMonth = (dateTime) => new Date(dateTime).getDate();
+
+  const nameOfDay = (day) => day.slice(0, 3).toUpperCase();
+
+  const timeFromDate = (dateTime) =>
+    new Date(dateTime).toLocaleTimeString("en-GB", {
+      hour: "2-digit",
+      minute: "2-digit",
+    });
 
   return (
     <LoggedInLayout
@@ -49,7 +78,16 @@ function PatientDashboard() {
           <img src={dashboardImage} alt="Dashboard Image" />
         </div>
         <div className={styles.mainContent}>
-          <NextAppointmentComponent />
+          <NextAppointmentComponent
+            dayOfMonth={dayOfMonth(upcoming.startDateTime)}
+            dayOfWeek={nameOfDay(upcoming.dayOfWeek)}
+            startTime={timeFromDate(upcoming.startDateTime)}
+            endTime={timeFromDate(upcoming.endDateTime)}
+            name={upcoming.fullName}
+            symptoms={upcoming.symptoms}
+            reason={upcoming.reason}
+            note={upcoming.note}
+          />
           <div className={styles.rightContainer}>
             <div className={styles.topRight}>
               <h3>Previous appointments</h3>
@@ -64,9 +102,11 @@ function PatientDashboard() {
               {history.length > 0 ? (
                 <div className={styles.horizontalFlex}>
                   {history.slice(0, 2).map((item) => (
-                    <div className={styles.historyContainer}>
+                    <div
+                      className={styles.historyContainer}
+                      key={item.bookingId}
+                    >
                       <HistoryInfoContainer
-                        key={item.bookingId}
                         fullName={item.fullName}
                         date={item.startDateTime}
                       />
@@ -81,9 +121,11 @@ function PatientDashboard() {
               {history.length > 2 ? (
                 <div className={styles.horizontalFlex}>
                   {history.slice(2, 4).map((item) => (
-                    <div className={styles.historyContainer}>
+                    <div
+                      className={styles.historyContainer}
+                      key={item.bookingId}
+                    >
                       <HistoryInfoContainer
-                        key={item.bookingId}
                         fullName={item.fullName}
                         date={item.startDateTime}
                       />

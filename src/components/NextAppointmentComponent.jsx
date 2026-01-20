@@ -1,7 +1,7 @@
 import styles from "../styles/NextAppointmentComponent.module.css"
 import {PrimaryButton} from "./Button.jsx"
 
-const NextAppointmentComponent = () => {
+const NextAppointmentComponent = ({dayOfMonth, dayOfWeek, startTime, endTime, name, symptoms, reason, note}) => {
 
   return (
     <div className={styles.mainContainer}>
@@ -15,26 +15,26 @@ const NextAppointmentComponent = () => {
             <div className={styles.infoContainer}>
                 <div className={styles.infoTop}>
                     <div className={styles.dateBox}>
-                        <h6>Fri</h6>
-                        <h3>14</h3>
+                        <h6>{dayOfWeek}</h6>
+                        <h3>{dayOfMonth}</h3>
                     </div>
                     <div className={styles.timeAndCaregiver}>
-                        <h4>10:00-11:00</h4>
-                        <h6>Dr. Ashton Cleve</h6>
+                        <h4>{`${startTime}` + ` - ` + `${endTime}`}</h4>
+                        <h6>{name}</h6>
                     </div>
                 </div>
                 <div className={styles.infoBottom}>
                     <div className={styles.infoBlock}>
                         <h5 className={styles.category}>Symptoms: </h5>
-                        <h5>Cold/Fever</h5>
+                        <h5>{symptoms.join(", ")}</h5>
                     </div>
                     <div className={styles.infoBlock}>
                         <h5 className={styles.category}>Reason:</h5>
-                        <h5>Checkup</h5>
+                        <h5>{reason}</h5>
                     </div>
                     <div className={styles.infoBlock}>
                         <h5 className={styles.category}>Note: </h5>
-                        <h5>Been having covid-like symptoms for over a week now</h5>
+                        <h5>{note}</h5>
                     </div>
                 </div>
             </div>
