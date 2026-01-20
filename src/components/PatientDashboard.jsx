@@ -9,6 +9,7 @@ import buttonStyles from "../styles/SecondaryButton.module.css";
 import axios from "axios";
 import { useEffect, useState } from "react";
 import HistoryInfoContainer from "./HistoryInfoContainer";
+import { useNavigate } from "react-router-dom";
 
 function PatientDashboard() {
   const {
@@ -52,9 +53,15 @@ function PatientDashboard() {
 
   console.log("UPCOMING: " + JSON.stringify(upcoming));
 
+  const navigate = useNavigate();
+
+  const navToPage = (page) => {
+  navigate(page, { withCredentials: true });
+};
+
   const dayOfMonth = (dateTime) => new Date(dateTime).getDate();
 
-  const nameOfDay = (day) => day.slice(0, 3).toUpperCase();
+  const nameOfDay = (day = "") => day.slice(0, 3).toUpperCase();
 
   const timeFromDate = (dateTime) =>
     new Date(dateTime).toLocaleTimeString("en-GB", {
@@ -80,13 +87,14 @@ function PatientDashboard() {
         <div className={styles.mainContent}>
           <NextAppointmentComponent
             dayOfMonth={dayOfMonth(upcoming.startDateTime)}
-            dayOfWeek={nameOfDay(upcoming.dayOfWeek)}
+            dayOfWeek={upcoming.dayOfWeek}
             startTime={timeFromDate(upcoming.startDateTime)}
             endTime={timeFromDate(upcoming.endDateTime)}
             name={upcoming.fullName}
             symptoms={upcoming.symptoms}
             reason={upcoming.reason}
             note={upcoming.note}
+            onBookNow={() => navToPage(`/booking`)}
           />
           <div className={styles.rightContainer}>
             <div className={styles.topRight}>

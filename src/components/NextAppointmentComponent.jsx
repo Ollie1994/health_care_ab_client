@@ -1,14 +1,14 @@
 import styles from "../styles/NextAppointmentComponent.module.css"
 import {PrimaryButton} from "./Button.jsx"
 
-const NextAppointmentComponent = ({dayOfMonth, dayOfWeek, startTime, endTime, name, symptoms, reason, note}) => {
+const NextAppointmentComponent = ({dayOfMonth, dayOfWeek, startTime, endTime, name, symptoms, reason, note, onBookNow}) => {
 
   return (
     <div className={styles.mainContainer}>
         <div className={styles.topContainer}>
             <div className={styles.titleContainer}>
                 <h3>Next Appointment</h3>
-                <PrimaryButton className={styles.primaryButton}>
+                <PrimaryButton onClick={onBookNow} className={styles.primaryButton}>
                     <h5>Book Now</h5>
                 </PrimaryButton>
             </div>
@@ -26,7 +26,7 @@ const NextAppointmentComponent = ({dayOfMonth, dayOfWeek, startTime, endTime, na
                 <div className={styles.infoBottom}>
                     <div className={styles.infoBlock}>
                         <h5 className={styles.category}>Symptoms: </h5>
-                        <h5>{symptoms.join(", ")}</h5>
+                        <h5>{symptoms?.join(", ") || "None yet"}</h5>
                     </div>
                     <div className={styles.infoBlock}>
                         <h5 className={styles.category}>Reason:</h5>
