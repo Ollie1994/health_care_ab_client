@@ -10,7 +10,6 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import HistoryInfoContainer from "./HistoryInfoContainer";
 
-// Only accessible to users with the "User" role
 function PatientDashboard() {
   const {
     authState: { user },
@@ -32,7 +31,7 @@ function PatientDashboard() {
     };
 
     fetchHistory();
-  }, []);
+  }, [history]);
 
   return (
     <LoggedInLayout

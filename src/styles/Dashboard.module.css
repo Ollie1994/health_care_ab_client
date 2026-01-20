@@ -2,7 +2,7 @@
     width: 100%;
     display: flex;
     flex-direction: column;
-    gap: 2rem;
+    gap: 2.5rem;
     align-items: top;
     justify-content: center;
     padding: 0rem 2rem;
@@ -52,19 +52,24 @@ img {
 .mainContent {
     display: flex;
     width: 100%;
-    height: fit-content;
-    gap: 2rem;
+    gap: 1rem;
+    height: 100%;
 }
 
 .rightContainer {
     height: max-content;
     flex-grow: 1;
     height: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: .5rem 1rem 0rem 0rem;
 }
 
 .topRight {
     display: flex;
     justify-content: space-between;
+    padding: .5rem 1rem 1rem 1rem;
+
 }
 
 .viewAllText {
@@ -72,11 +77,13 @@ img {
 }
 
 .bottomRight {
+    height: fit-content;
     display: flex;
     flex-direction: column;
 }
 
 .horizontalFlex {
+    height: 100%;
     display: flex;
     align-content: space-between;
     align-items: center;
@@ -84,5 +91,6 @@ img {
 
 .historyContainer {
     width: 50%;
+    height: 110px;
     padding: .5rem;
 }
