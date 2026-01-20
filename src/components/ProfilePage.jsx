@@ -10,6 +10,7 @@ import HistoryInfoContainer from "./HistoryInfoContainer";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import LoggedInLayout from "./LoggedInLayout"
+import DeleteConfirmation from "./DeleteConfirmation";
 
 function ProfilePage() {
   const {
@@ -17,6 +18,7 @@ function ProfilePage() {
   } = useAuth();
 
   const [history, setHistory] = useState([]);
+  const [viewDeleteConfirmation, setViewDeleteConfirmation] = useState(false);
 
   useEffect(() => {
   const fetchHistory = async () => {
@@ -142,7 +144,7 @@ const formatSSN = (ssn) => {
       {/* GENERAL */}
       <div className={`${styles.infoContainer} ${styles.verticalLeft}`}>
           <h3>General</h3>
-          <div className={`${styles.flexBetweenContainer}`}>
+          <div className={styles.flexBetweenContainer}>
             <div className={styles.infoBox}>
               <h4>Change Password</h4>
               <SecondaryButton>
@@ -156,9 +158,21 @@ const formatSSN = (ssn) => {
               <h4 className={styles.buttonText}>Enable</h4>
             </SecondaryButton>
             </div>
+            <div className={styles.verticalDivider}></div>
+            <div className={styles.infoBox}>
+              <h4>Delete Account</h4>
+              <SecondaryButton className={styles.deleteButton} onClick={() => setViewDeleteConfirmation(true)}>
+              <h4 className={styles.buttonText}>Delete</h4>
+            </SecondaryButton>
+            </div>
           </div>
       </div>
     </div>
+    {viewDeleteConfirmation ? (
+      <div className={styles.deleteConfirmationContainer}>
+          <DeleteConfirmation setViewDeleteConfirmation={setViewDeleteConfirmation}/>
+        </div>
+        ) : (null)}
         </LoggedInLayout>
   );
 }

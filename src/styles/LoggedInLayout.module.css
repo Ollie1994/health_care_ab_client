@@ -5,8 +5,9 @@
 }
 
 .sidebar {
+    position:fixed;
     width: 230px;
-    height: 100vh;
+    height: 100%;
     background-color: #FFFFFF;
     border-right: solid;
     border-width: 2px;
@@ -20,7 +21,9 @@
 }
 
 .mainContent {
+    padding-left: 230px;
     width: 100%;
+    height: 100vh;
     display: flex;
     flex-direction: column;
 }

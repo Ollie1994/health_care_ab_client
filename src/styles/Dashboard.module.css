@@ -98,3 +98,8 @@ img {
     height: 110px;
     padding: .5rem;
 }
+
+.noneYetText {
+    width: 100%;
+    padding-left: 2rem;
+}

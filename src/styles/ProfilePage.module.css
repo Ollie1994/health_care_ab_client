@@ -110,7 +110,7 @@
 }
 
 .infoBox {
-  flex: auto;
+  width: 25%;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -128,4 +128,19 @@
 
 .buttonText {
   font-weight: 400 !important;
+}
+
+.deleteButton:hover {
+  border-color: #883636 !important;
+  background-color: #883636 !important;
+}
+
+.deleteConfirmationContainer {
+  background-color: #000000d3;
+  width: 90%;
+  height: 100%;
+  position: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }

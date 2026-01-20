@@ -137,7 +137,7 @@ const dayOfMonth = (dateTime) => {
                   ))}
                 </div>
               ) : (
-                <div className={styles.horizontalFlex}>
+                <div className={`${styles.noneYetText}`}>
                   <h4>None yet!</h4>
                 </div>
               )}
