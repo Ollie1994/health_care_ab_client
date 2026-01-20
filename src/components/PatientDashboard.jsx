@@ -51,23 +51,28 @@ function PatientDashboard() {
     fetchUpcoming();
   }, []);
 
-  console.log("UPCOMING: " + JSON.stringify(upcoming));
-
   const navigate = useNavigate();
 
   const navToPage = (page) => {
   navigate(page, { withCredentials: true });
 };
 
-  const dayOfMonth = (dateTime) => new Date(dateTime).getDate();
-
+const dayOfMonth = (dateTime) => {
+  if (!dateTime) return "--";
+  const day = new Date(dateTime).getDate();
+  return isNaN(day) ? "--" : day;
+};
   const nameOfDay = (day = "") => day.slice(0, 3).toUpperCase();
 
-  const timeFromDate = (dateTime) =>
-    new Date(dateTime).toLocaleTimeString("en-GB", {
-      hour: "2-digit",
-      minute: "2-digit",
-    });
+  const timeFromDate = (dateTime) => {
+  if (!dateTime) return "00:00";
+  const date = new Date(dateTime);
+  if (isNaN(date.getTime())) return "00:00";
+  return date.toLocaleTimeString("en-GB", {
+    hour: "2-digit",
+    minute: "2-digit",
+  });
+};
 
   return (
     <LoggedInLayout
@@ -87,7 +92,7 @@ function PatientDashboard() {
         <div className={styles.mainContent}>
           <NextAppointmentComponent
             dayOfMonth={dayOfMonth(upcoming.startDateTime)}
-            dayOfWeek={upcoming.dayOfWeek}
+            dayOfWeek={nameOfDay(upcoming.dayOfWeek)}
             startTime={timeFromDate(upcoming.startDateTime)}
             endTime={timeFromDate(upcoming.endDateTime)}
             name={upcoming.fullName}
@@ -95,6 +100,7 @@ function PatientDashboard() {
             reason={upcoming.reason}
             note={upcoming.note}
             onBookNow={() => navToPage(`/booking`)}
+            hasNextAppointment={!!upcoming.bookingId}
           />
           <div className={styles.rightContainer}>
             <div className={styles.topRight}>

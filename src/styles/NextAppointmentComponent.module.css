@@ -114,3 +114,12 @@ h3 {
 .cancelButton {
     background-color: #3D3D3D !important;
 }
+
+.noUpcoming {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    text-align: center;
+}
