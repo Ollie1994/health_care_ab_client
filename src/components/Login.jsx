@@ -3,6 +3,7 @@ import { useState } from "react";
 import axios from "axios";
 import { useAuth } from "../hooks/useAuth";
 import { useNavigate } from "react-router-dom";
+import Logo from "../assets/logo";
 
 // Styled components for login page layout
 const LoginContainer = styled.div`
@@ -125,7 +126,8 @@ function Login() {
   };
 
   return (
-    <LoginContainer style={{ paddingTop: "3rem", gap: "2rem"}}>
+    <LoginContainer style={{ paddingTop: "3rem", gap: "2rem", color: "#0073e6"}}>
+      <Logo/>
       <Title style={{ color: "#0073e6"}}>Login</Title>
       {error && <p style={{ color: "red" }}>{error}</p>}
       <FormWrapper onSubmit={handleLogin} aria-label="Login form">

@@ -18,6 +18,7 @@ import {
   CheckboxText,
 } from "../styles/RegisterStyle";
 import { Button } from "./Button";
+import Logo from "../assets/logo";
 
 function Register() {
   const navigate = useNavigate();
@@ -74,8 +75,9 @@ function Register() {
       </LeftPanel>
       <RightPanel style={{ paddingTop: "3rem", gap: "2rem"}}>
         <FormCard>
-          <FormCardInner>
-            <Heading style={{ color: "#0073e6"}}>Hey there</Heading>
+          <FormCardInner style={{ gap: "2rem",  color: "#0073e6"}}>
+            <Logo/>
+            <Heading style={{ color: "#0073e6", paddingTop: "1rem", paddingBottom:"1rem"}}>Hey there</Heading>
             <SubHeading>
               Already have an account? <a href="/login">Log in</a>
             </SubHeading>
