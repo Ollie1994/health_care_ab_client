@@ -3,6 +3,7 @@ import { useState } from "react";
 import axios from "axios";
 import { useAuth } from "../hooks/useAuth";
 import { useNavigate } from "react-router-dom";
+import Logo from "../assets/logo";
 
 // Styled components for login page layout
 const LoginContainer = styled.div`
@@ -15,13 +16,15 @@ const LoginContainer = styled.div`
 const LoginButton = styled.button`
   cursor: pointer;
   padding: 10px 30px;
-  background-color: #057d7a;
+  background-color: #0073E6;
   border-radius: 10px;
   font-size: 18px;
   font-weight: 600;
   color: #fff;
   margin-top: 40px;
-  transition: background-color 0.3s ease, transform 0.2s ease,
+  transition:
+    background-color 0.3s ease,
+    transform 0.2s ease,
     box-shadow 0.2s ease;
   text-align: center;
   border: none;
@@ -84,18 +87,30 @@ function Login() {
           // withCredentials: true is required for the server to set HTTP-only cookies
           // This is essential for cookie-based authentication
           withCredentials: true,
-        }
+        },
       );
 
       console.log("Login successful:", JSON.stringify(response.data));
 
-      const { loggedInUser, roles } = response.data;
+      const {
+        username,
+        email,
+        firstName,
+        lastName,
+        socialSecurityNumber,
+        roles,
+      } = response.data;
 
-      // Update global auth state with user information
       setAuthState({
         isAuthenticated: true,
-        user: loggedInUser,
-        roles: roles,
+        user: {
+          username,
+          email,
+          firstName,
+          lastName,
+          socialSecurityNumber,
+        },
+        roles,
       });
 
       // Redirect based on user role
@@ -111,8 +126,9 @@ function Login() {
   };
 
   return (
-    <LoginContainer>
-      <Title>Login</Title>
+    <LoginContainer style={{ paddingTop: "3rem", gap: "2rem", color: "#0073e6"}}>
+      <Logo/>
+      <Title style={{ color: "#0073e6"}}>Login</Title>
       {error && <p style={{ color: "red" }}>{error}</p>}
       <FormWrapper onSubmit={handleLogin} aria-label="Login form">
         <label htmlFor="username">Username:</label>

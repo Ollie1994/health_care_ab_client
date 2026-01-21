@@ -9,6 +9,8 @@ import buttonStyles from "../styles/SecondaryButton.module.css";
 import HistoryInfoContainer from "./HistoryInfoContainer";
 import { useEffect, useState } from "react";
 import axios from "axios";
+import LoggedInLayout from "./LoggedInLayout"
+import DeleteConfirmation from "./DeleteConfirmation";
 
 function ProfilePage() {
   const {
@@ -16,10 +18,10 @@ function ProfilePage() {
   } = useAuth();
 
   const [history, setHistory] = useState([]);
-  const [age, setAge] = useState(null);
+  const [viewDeleteConfirmation, setViewDeleteConfirmation] = useState(false);
 
   useEffect(() => {
-  const fetchProfile = async () => {
+  const fetchHistory = async () => {
     try {
       const response = await axios.get(
         "http://localhost:8080/booking/history",
@@ -31,7 +33,7 @@ function ProfilePage() {
     }
   };
 
-  fetchProfile();
+  fetchHistory();
 }, []);
 
 const calculateAgeFromSSN = (ssn) => {
@@ -78,6 +80,8 @@ const formatSSN = (ssn) => {
 };
 
   return (
+    <LoggedInLayout pageName={`Profile`} firstName={user.firstName} lastName={user.lastName} className={styles.background}
+    >
     <div className={styles.profileContainer}>
       {/* NAME */}
       <div className={styles.nameContainer}>
@@ -101,7 +105,7 @@ const formatSSN = (ssn) => {
             <InfoSection title={`Username`} paragraph={user.username} />
             <InfoSection
               title={`Email Address`}
-              paragraph={user.email}
+              paragraph={user?.email ?? "None"}
             />
           </div>
           <div className={styles.informationSection}>
@@ -140,7 +144,7 @@ const formatSSN = (ssn) => {
       {/* GENERAL */}
       <div className={`${styles.infoContainer} ${styles.verticalLeft}`}>
           <h3>General</h3>
-          <div className={`${styles.flexBetweenContainer}`}>
+          <div className={styles.flexBetweenContainer}>
             <div className={styles.infoBox}>
               <h4>Change Password</h4>
               <SecondaryButton>
@@ -154,9 +158,22 @@ const formatSSN = (ssn) => {
               <h4 className={styles.buttonText}>Enable</h4>
             </SecondaryButton>
             </div>
+            <div className={styles.verticalDivider}></div>
+            <div className={styles.infoBox}>
+              <h4>Delete Account</h4>
+              <SecondaryButton className={styles.deleteButton} onClick={() => setViewDeleteConfirmation(true)}>
+              <h4 className={styles.buttonText}>Delete</h4>
+            </SecondaryButton>
+            </div>
           </div>
       </div>
     </div>
+    {viewDeleteConfirmation ? (
+      <div className={styles.deleteConfirmationContainer}>
+          <DeleteConfirmation setViewDeleteConfirmation={setViewDeleteConfirmation}/>
+        </div>
+        ) : (null)}
+        </LoggedInLayout>
   );
 }
 

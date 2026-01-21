@@ -1,7 +1,7 @@
 .mainContainer {
     flex-grow: 1;
     max-width: 500px;
-    height: fit-content;
+    height: 100%;
 
     display: flex;
     flex-direction: column;
@@ -25,9 +25,10 @@
 
 .bottomContainer {
     display: flex;
-    height: fit-content;
+    height: 100%;
     width: 100%;
     justify-content: space-between;
+    align-items: center;
     padding: .3rem;
     background-color: #F6F6F6;
     border-radius: 5px;

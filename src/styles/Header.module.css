@@ -1,0 +1,21 @@
+.header {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 3rem 3.5rem 2rem 3.5rem;
+    color: #232323;
+}
+
+.userSection {
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+    margin-bottom: 10px;
+}
+
+.icon {
+    width: 30px;
+    height: 30px;
+    margin-bottom: 3px;
+}

@@ -4,10 +4,8 @@
   padding: 0;
 }
 
-body {
-  width: 100%;
+.background {
   background-color: #F6F6F6;
-  overflow-x: hidden; /* prevent horizontal scroll as safety */
 }
 
 .profileContainer {
@@ -112,7 +110,7 @@ body {
 }
 
 .infoBox {
-  flex: auto;
+  width: 25%;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -130,4 +128,19 @@ body {
 
 .buttonText {
   font-weight: 400 !important;
+}
+
+.deleteButton:hover {
+  border-color: #883636 !important;
+  background-color: #883636 !important;
+}
+
+.deleteConfirmationContainer {
+  background-color: #000000d3;
+  width: 90%;
+  height: 100%;
+  position: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }

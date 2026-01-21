@@ -1,0 +1,10 @@
+.anonContainer {
+    display: flex;
+    flex-direction: column;
+    color: #0073E6;
+    gap: 2rem;
+    padding: 3rem 20rem;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
