@@ -15,7 +15,7 @@ const DeleteConfirmation = ({ setViewDeleteConfirmation }) => {
       );
 
       setViewDeleteConfirmation(false);
-      navigate("/login", { replace: true });
+      navigate("/anonymized", { replace: true });
     } catch (error) {
       console.error("Failed to anonymize account:", error.response || error);
     }
