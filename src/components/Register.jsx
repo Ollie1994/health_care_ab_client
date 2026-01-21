@@ -72,10 +72,10 @@ function Register() {
       <LeftPanel>
         <LogoText>HealthCare AB</LogoText>
       </LeftPanel>
-      <RightPanel>
+      <RightPanel style={{ paddingTop: "3rem", gap: "2rem"}}>
         <FormCard>
           <FormCardInner>
-            <Heading>Hey there</Heading>
+            <Heading style={{ color: "#0073e6"}}>Hey there</Heading>
             <SubHeading>
               Already have an account? <a href="/login">Log in</a>
             </SubHeading>

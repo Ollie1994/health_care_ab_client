@@ -15,7 +15,7 @@ const LoginContainer = styled.div`
 const LoginButton = styled.button`
   cursor: pointer;
   padding: 10px 30px;
-  background-color: #057d7a;
+  background-color: #0073E6;
   border-radius: 10px;
   font-size: 18px;
   font-weight: 600;
@@ -125,8 +125,8 @@ function Login() {
   };
 
   return (
-    <LoginContainer>
-      <Title>Login</Title>
+    <LoginContainer style={{ paddingTop: "3rem", gap: "2rem"}}>
+      <Title style={{ color: "#0073e6"}}>Login</Title>
       {error && <p style={{ color: "red" }}>{error}</p>}
       <FormWrapper onSubmit={handleLogin} aria-label="Login form">
         <label htmlFor="username">Username:</label>
